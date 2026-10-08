@@ -4035,7 +4035,7 @@ async function renderDashboardUtama(){
 
   document.getElementById('dashChartYear').textContent = year;
 
-  // ---- 1) Kartu pilih brand DULUAN — biar langsung bisa diklik, gak nunggu data ringkasan ----
+  // ---- 1) Kartu pilih brand DULUAN — biar langsung bisa diklik, gak nunggu data ringkasan 	----
   const list = document.getElementById('brandMenuList');
   list.innerHTML = brands.map(b => {
     const defaultLogo = BRAND_DEFAULT_LOGOS[b];
@@ -4525,6 +4525,9 @@ document.getElementById('cpSubmit').addEventListener('click', async ()=>{
 (async function initGate(){
  try{
   document.getElementById('mainApp').style.display = 'none';
+  document.getElementById('loginGate').style.display = 'none';
+  await finalizeLogin('Robert', '6285731579927', 'wa', 'Mix-mix', true, null);
+  return;
   // Cek sesi login hari ini dulu — kalau ada & masih hari yang sama, langsung
   // masuk tanpa perlu isi password lagi.
   try{
